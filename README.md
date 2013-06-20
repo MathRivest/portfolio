@@ -5,24 +5,19 @@ Mathieu Rivest  - Portfolio - 2013
 
 Responsive
 
-Templating
----------
+####Templating
 Jade
 
-CSS
----------
+####CSS
 Sass + Compass
 
-JS
----------
+####JS
 jQuery
 
-Tools
----------
+####Tools
 Grunt to build
 
-Projects
----------
+####Projects
 - BBC
 - Co-Efficient Humain
 - uniYu
