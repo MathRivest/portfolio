@@ -50,15 +50,27 @@ module.exports = function(grunt) {
     },
     // Only works with PNG (not JPG)
     imagemin: {
-        dist: {
-          options: {
-            optimizationLevel: 3
-          },
-          files: {
-            'dist/test.jpg': 'img/abstract-q-c-500-500-7.jpg'
-          }
+      dist: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: {
+          'dist/test.jpg': 'img/abstract-q-c-500-500-7.jpg'
         }
       }
+    },
+    jade: {
+      compile: {
+        options: {
+          data: {
+            debug: false
+          }
+        },
+        files: {
+          "index.html": ["views/index.jade"]
+        }
+      }
+    }
   });
 
 
@@ -74,6 +86,9 @@ module.exports = function(grunt) {
 
   // Images
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+
+  // Templating
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   // Other
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -94,7 +109,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint']);
 
   // All
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass', 'imagemin']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass', 'imagemin', 'jade']);
 
 
   //TODO : COMPASS WATCH + SMUSH IT
