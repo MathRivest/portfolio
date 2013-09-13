@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['js/*.js', 'js/!(vendor)'],
-        dest: 'dist/js/main.js'
+        src: ['js/plugins/*.js', 'js/main.js'],
+        dest: 'js/main.concat.js'
       }
     },
     uglify: {
@@ -20,12 +20,12 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/js/main.min.js': ['<%= concat.dist.dest %>']
+          'js/main.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'js/*.js', 'js/!(vendor)'],
+      files: ['Gruntfile.js', 'js/main.js'],
       options: {
         globals: {
           jQuery: true,
@@ -36,8 +36,11 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
+      all: {
+        options: { livereload: true },
+        files: ['views/**/*.jade'],
+        tasks: ['jade'],
+      },
     },
     // Link to config and update the paths
     compass: {
@@ -55,20 +58,37 @@ module.exports = function(grunt) {
           optimizationLevel: 3
         },
         files: {
-          'dist/test.jpg': 'img/abstract-q-c-500-500-7.jpg'
+          'img/test.jpg': 'img/abstract-q-c-500-500-7.jpg'
         }
       }
     },
+    //Jade templating
     jade: {
       compile: {
         options: {
           data: {
-            debug: false
-          }
+            debug: true
+          },
+          pretty: true
         },
         files: {
           "index.html": ["views/index.jade"]
         }
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          base: '' //Base path is the current folder
+        },
+        keepalive: true
+      }
+    },
+    open: {
+      all: {
+        // Gets the port from the connect configuration
+        path: 'http://localhost:<%= connect.server.options.port%>'
       }
     }
   });
@@ -92,7 +112,8 @@ module.exports = function(grunt) {
 
   // Other
   grunt.loadNpmTasks('grunt-contrib-watch');
-
+  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
 /* - Register tasks --------------------------------------------------------------- */
 
@@ -108,10 +129,13 @@ module.exports = function(grunt) {
   // Test tasks
   grunt.registerTask('test', ['jshint']);
 
+  // Start a local web server
+  grunt.registerTask('start', [ 'open', 'connect:server:keepalive']);
+
   // All
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass', 'imagemin', 'jade']);
 
 
-  //TODO : COMPASS WATCH + SMUSH IT
+  //TODO : COMPASS WATCH + IMAGE MIN
 
 };
