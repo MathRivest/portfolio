@@ -36,11 +36,18 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      all: {
-        options: { livereload: true },
-        files: ['views/**/*.jade'],
-        tasks: ['jade'],
+      js: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint']
       },
+      css: {
+        files: ['css/**/*.scss'],
+        tasks: ['compass']
+      },
+      jade: {
+        files: ['views/**/*.jade'],
+        tasks: ['jade']
+      }
     },
     // Link to config and update the paths
     compass: {
@@ -53,13 +60,29 @@ module.exports = function(grunt) {
     },
     // Only works with PNG (not JPG)
     imagemin: {
-      dist: {
+      png: {
         options: {
-          optimizationLevel: 3
+          optimizationLevel: 7
         },
-        files: {
-          'img/test.jpg': 'img/abstract-q-c-500-500-7.jpg'
-        }
+        files: [{
+            expand: true,
+            cwd: 'img/src',
+            src: ['**/*.png'],
+            dest: 'img/compressed/',
+            ext: '.png'
+        }]
+      },
+      jpg: {
+        options: {
+          progressive: true
+        },
+        files: [{
+            expand: true,
+            cwd: 'img/src',
+            src: ['**/*.jpg'],
+            dest: 'img/compressed/',
+            ext: '.jpg'
+        }]
       }
     },
     //Jade templating
