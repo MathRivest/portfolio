@@ -1,0 +1,68 @@
+html,
+button,
+input,
+select,
+textarea {
+	color: $baseFontColor;
+	font-family: $fontStack;
+}
+
+body {
+	background-color: $baseBodyColor;
+	font-size: $baseFontSize;
+	line-height: $baseLineHeight;
+}
+
+a {
+	color : $linkColor;
+	text-decoration: none;
+	&:visited { color : $linkColorVisited; }
+	&:hover { color : $linkColorHover; }
+	&:focus, &:active { color : $linkColorActive; }
+}
+
+h1, h2, h3, h4, h5, h6 {}
+
+img { vertical-align: middle; max-width: 100%; }
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0; padding: 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
+// Selection
+::-moz-selection {
+	background: $selectionBgColor;
+	text-shadow: none;
+}
+::selection {
+	background: $selectionBgColor;
+	text-shadow: none;
+}
+
+// Placeholder color
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:	  $placeholderColor;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:	  $placeholderColor;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:	  $placeholderColor;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:	  $placeholderColor;
+}

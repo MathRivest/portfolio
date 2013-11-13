@@ -1,0 +1,57 @@
+
+//open sans bold
+//open sans semibold
+
+//open sans light
+
+//PlayfairDisplay Italic
+
+/* =======================================================================
+Variables
+========================================================================== */
+
+// Colors
+$black:					#0c0d0f;
+$grey-dark:				#1c2024;
+$grey-light:			#77797c;
+
+$green-light:			#69c773;
+
+// Typography
+$baseBodyColor:			$grey-dark;
+$baseFontColor:			$grey-light;
+$baseFontSize:			1em;
+$linkColor:				#ff0000;
+$linkColorVisited:		lighten($linkColor, 20%);
+$linkColorHover:		darken($linkColor, 20%);
+$linkColorActive:		darken($linkColor, 40%);
+
+// Fonts stacks
+$fontStack:				'Open Sans', sans-serif;
+$fontStackAlt:			'Playfair Display', serif;
+$baseFontSize:			1em;
+$baseLineHeight:		1.4;
+
+
+// Highlight
+$selectionBgColor:		#ff0000;
+
+$placeholderColor:		#ff0000;
+
+
+
+
+
+
+
+
+/* =======================================================================
+Layout
+========================================================================== */
+// Grid (susy)
+$total-columns:				12;
+$column-width:				4em;
+$gutter-width:				1em;
+$grid-padding:				1em;
+$container-width:			75em; // 1200px -> this might be wrong... lol?
+$show-grid-backgrounds:		true;
