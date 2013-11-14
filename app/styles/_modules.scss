@@ -33,16 +33,27 @@ Top Navigation
 
 
 /* =======================================================================
+Header
+========================================================================== */
+.m-header{
+	padding:220px 0 200px;
+	text-align:center;
+}
+
+/* =======================================================================
 My Work
 ========================================================================== */
 .m-work{
+	@include container;
 	>h3{
 		@extend .visuallyhidden;
 	}
 
 	.m-project{
-		float:left;
-		width:33%;
+		@include span-columns(4,12);
+		&.last{
+			@include span-columns(4 omega,12);
+		}
 	}
 }
 
@@ -51,6 +62,22 @@ My Work
 Projects
 ========================================================================== */
 .m-project{
+	text-align:center;
+	img{
+		width:100%;
+		margin-bottom:40px;
+		@include border-radius(100%);
+	}
+	h4{
+		margin:3px;
+	}
+	p{
+		margin:0;
+		font-size: 12px;
+		text-transform:uppercase;
+		letter-spacing:1px;
+	}
+	margin-bottom:90px;
 }
 
 

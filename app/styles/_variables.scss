@@ -11,15 +11,20 @@ Variables
 ========================================================================== */
 
 // Colors
+$white:					#fff;
 $black:					#0c0d0f;
-$grey-dark:				#1c2024;
-$grey-light:			#77797c;
+$greyDark:				#1c2024;
+$greyLight:				#77797c;
 
-$green-light:			#69c773;
+$greenLight:			#69c773;
+
+
+$colorPrimary:			$greyLight;
+$colorSecondary:		$greenLight;
 
 // Typography
-$baseBodyColor:			$grey-dark;
-$baseFontColor:			$grey-light;
+$baseBodyColor:			$greyDark;
+$baseFontColor:			$colorPrimary;
 $baseFontSize:			1em;
 $linkColor:				#ff0000;
 $linkColorVisited:		lighten($linkColor, 20%);
@@ -44,14 +49,13 @@ $placeholderColor:		#ff0000;
 
 
 
-
 /* =======================================================================
 Layout
 ========================================================================== */
 // Grid (susy)
 $total-columns:				12;
-$column-width:				4em;
-$gutter-width:				1em;
-$grid-padding:				1em;
-$container-width:			75em; // 1200px -> this might be wrong... lol?
+$column-width:				45px;
+$gutter-width:				40px;
+$grid-padding:				0;
+$container-width:			980px; // 1200px -> this might be wrong... lol?
 $show-grid-backgrounds:		true;
