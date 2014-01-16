@@ -1,4 +1,7 @@
 
+
+@include font-face("Mono Social Icons Font", font-files("MonoSocialIconsFont-1.10.woff", "MonoSocialIconsFont-1.10.ttf", "MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont"), "MonoSocialIconsFont-1.10.eot", normal, normal);
+
 //open sans bold
 //open sans semibold
 
@@ -26,8 +29,8 @@ $colorSecondary:		$greenLight;
 $baseBodyColor:			$greyDark;
 $baseFontColor:			$colorPrimary;
 
-$linkColor:				#ff0000;
-$linkColorVisited:		lighten($linkColor, 20%);
+$linkColor:				$colorSecondary;
+$linkColorVisited:		$linkColor;
 $linkColorHover:		darken($linkColor, 20%);
 $linkColorActive:		darken($linkColor, 40%);
 

@@ -142,9 +142,10 @@ About
 .m-about{
 	background:$black;
 	color:$white;
+	padding:36px 0 48px;
 	.about_wrapper{
 		@include container;
-		padding:24px 0;
+		margin-bottom:36px;
 	}
 	p{
 		@include column-count(2);
@@ -152,20 +153,22 @@ About
 	}
 }
 
-/* =======================================================================
-Contact
-========================================================================== */
-.m-contact{
-	>h3{
-		@extend .visuallyhidden;
+.m-socials{
+	margin:0;
+	padding:0;
+	text-align:center;
+	li{
+		@include inline-block;
+		list-style:none;
 	}
-	.contact_container{
-		@include container;
-		padding:24px 0;
+	a{
+		color:$white;
+		font-size:50px;
+		&:hover{
+			color:$colorSecondary;
+		}
 	}
 }
-
-
 
 
 
