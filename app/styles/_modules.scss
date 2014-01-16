@@ -36,7 +36,7 @@ Top Navigation
 Header
 ========================================================================== */
 .m-header{
-	padding:220px 0 200px;
+	padding:220px 0 180px;
 	text-align:center;
 }
 
@@ -44,6 +44,11 @@ Header
 My Work
 ========================================================================== */
 .m-work{
+	position: relative;
+	width: 100%;
+	padding-top:20px;
+	perspective: 1000px;
+	perspective-origin: 50% 25%;
 	@include container;
 	>h3{
 		@extend .visuallyhidden;
@@ -55,13 +60,50 @@ My Work
 			@include span-columns(4 omega,12);
 		}
 	}
+	.grid{
+		@include opacity(0);
+	}
+	&.showcase-gridview{
+		.m-detail{
+			z-index:900;
+			transform: translateZ(-50%);
+			@include opacity(0);
+		}
+		.grid{
+			z-index:1000;
+			transform: translateZ(0px);
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+	.grid{
+		list-style:none;
+		padding:0;
+		margin:0;
+		position: absolute;
+		width: 100%;
+		/* left: 50%;
+		margin-left:- (980px / 2); */
+		z-index: 900;
+		top: 0;
+		//opacity: 0;
+		pointer-events: none;
+		transform-style: preserve-3d;
+		transition: all 0.3s ease;
+		transform: translateZ(-350px);
+	}
 }
+
+
+
 
 
 /* =======================================================================
 Projects
 ========================================================================== */
 .m-project{
+	cursor:pointer;
+	float:left;
 	text-align:center;
 	img{
 		width:100%;
@@ -80,12 +122,51 @@ Projects
 	margin-bottom:90px;
 }
 
+.m-detail{
+	z-index:1000;
+	width: 100%;
+	height: 620px;
+	margin: 0 auto;
+	position: relative;
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+	background:#fefefe;
+	article{
+		display:none;
+	}
+}
+
+/* =======================================================================
+About
+========================================================================== */
+.m-about{
+	background:$black;
+	color:$white;
+	.about_wrapper{
+		@include container;
+		padding:24px 0;
+	}
+	p{
+		@include column-count(2);
+		@include column-gap($gutter-width);
+	}
+}
 
 /* =======================================================================
 Contact
 ========================================================================== */
-.m-footer{
+.m-contact{
 	>h3{
 		@extend .visuallyhidden;
 	}
+	.contact_container{
+		@include container;
+		padding:24px 0;
+	}
 }
+
+
+
+
+
+

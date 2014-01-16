@@ -25,7 +25,7 @@ $colorSecondary:		$greenLight;
 // Typography
 $baseBodyColor:			$greyDark;
 $baseFontColor:			$colorPrimary;
-$baseFontSize:			1em;
+
 $linkColor:				#ff0000;
 $linkColorVisited:		lighten($linkColor, 20%);
 $linkColorHover:		darken($linkColor, 20%);
@@ -34,14 +34,14 @@ $linkColorActive:		darken($linkColor, 40%);
 // Fonts stacks
 $fontStack:				'Open Sans', sans-serif;
 $fontStackAlt:			'Playfair Display', serif;
-$baseFontSize:			1em;
-$baseLineHeight:		1.4;
+$baseFontSize:			14px;
+$baseLineHeight:		1.6em;
 
 
 // Highlight
-$selectionBgColor:		#ff0000;
+$selectionBgColor:		$colorSecondary;
 
-$placeholderColor:		#ff0000;
+$placeholderColor:		$colorSecondary;
 
 
 

@@ -44,7 +44,13 @@ h2, %h2{
 }
 
 h3, %h3{
-
+	margin:0 0 12px 0;
+	color:$white;
+	font:{
+		size:32px;
+		weight:300;
+	}
+	line-height:36px;
 }
 
 h4, %h4{
@@ -55,8 +61,9 @@ h4, %h4{
 	color:$colorSecondary;
 }
 
-
-
+p{
+	margin-top:0;
+}
 
 img { vertical-align: middle; max-width: 100%; }
 
@@ -82,10 +89,12 @@ textarea {
 ::-moz-selection {
 	background: $selectionBgColor;
 	text-shadow: none;
+	color:$white;
 }
 ::selection {
 	background: $selectionBgColor;
 	text-shadow: none;
+	color:$white;
 }
 
 // Placeholder color
