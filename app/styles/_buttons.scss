@@ -1,0 +1,13 @@
+.b-close{
+	font-size:58px;
+	width:50px;
+	display:block;
+	line-height:58px;
+	@include transition-property(all);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in-out);
+	@include rotate(45deg);
+	&:hover{
+		@include rotate(0deg);
+	}
+}

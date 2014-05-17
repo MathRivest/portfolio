@@ -45,7 +45,6 @@ My Work
 ========================================================================== */
 .m-work{
 	position: relative;
-	width: 100%;
 	padding-top:20px;
 	perspective: 1000px;
 	perspective-origin: 50% 25%;
@@ -124,24 +123,62 @@ Projects
 
 .m-detail{
 	z-index:1000;
-	width: 100%;
-
 	margin: 0 auto;
+	padding-top:20px;
 	position: relative;
 	transition: all 0.3s ease;
 	transform-style: preserve-3d;
-	background:#fefefe;
+	// background:#fefefe;
+	.b-close{
+		position:absolute;
+		top:0;
+		right:0;
+	}
 	article{
 		display:none;
 	}
+	img{}
+	h4{
+		@extend %h3;
+	}
+
+	p{
+		margin-bottom:24px;
+		color:$greyLighter;
+	}
+
+	ul{
+		padding:0;
+		margin-bottom:24px;
+	}
+	li{
+		@include inline-block;
+		padding:4px 6px;
+		background-color:$colorSecondary;
+		color:$white;
+		list-style:none;
+		font-size:12px;
+		@include border-radius(3px);
+	}
 }
+
+/* =======================================================================
+Per project
+========================================================================== */
+.m-detail{
+	[data-project="bbc"]{
+
+	}
+
+}
+
 
 /* =======================================================================
 About
 ========================================================================== */
 .m-about{
 	background:$black;
-	color:$white;
+	color:$greyLighter;
 	padding:36px 0 48px;
 	.about_wrapper{
 		@include container;
@@ -163,7 +200,7 @@ About
 		margin:0 10px;
 	}
 	a{
-		color:$white;
+		color:$greyLighter;
 		font-size:50px;
 		&:hover{
 			color:$colorSecondary;

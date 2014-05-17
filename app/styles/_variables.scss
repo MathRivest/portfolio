@@ -18,6 +18,7 @@ $white:					#fff;
 $black:					#0c0d0f;
 $greyDark:				#1c2024;
 $greyLight:				#77797c;
+$greyLighter: 			#b4b4b4;
 
 $greenLight:			#69c773;
 
@@ -55,6 +56,6 @@ Layout
 $total-columns:				12;
 $column-width:				45px;
 $gutter-width:				40px;
-$grid-padding:				0;
-$container-width:			980px; // 1200px -> this might be wrong... lol?
+$grid-padding:				20px;
+$container-width:			940px; // 1200px -> this might be wrong... lol?
 $show-grid-backgrounds:		true;
